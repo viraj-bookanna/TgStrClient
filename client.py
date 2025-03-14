@@ -2,7 +2,9 @@ import time, os
 from selenium import webdriver
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
+from dotenv import load_dotenv
 
+load_dotenv(override=True)
 session = StringSession(input('Session: '))
 
 with TelegramClient(session, os.getenv('API_ID'), os.getenv('API_HASH')) as ses:
